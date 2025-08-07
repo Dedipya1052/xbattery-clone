@@ -1,42 +1,646 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #000;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  font-size: large;
+  color:#f5f5f5;
+}
+.background-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  align-items: center;
+}
+.navbar .logo {
+  height: 40px;
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+.portal-button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.customer-portal-btn {
+  background-color: black; /* Bright cyan-like color */
+  color:white;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: 2px solid white;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.customer-portal-btn:hover {
+  transform: scale(1.05);
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  color:white;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+}
+.hero-content h1 {
+  font-size: 64px; /* increased from 48px */
+  margin: 0;
+}
+
+.hero-content p {
+  font-size: 24px; /* increased from 20px */
+}
+
+.get-notified {
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* BharatBMS Section */
+.bharatbms-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 80px;
+  background-color: black;
+  
+  flex-wrap: wrap;
+}
+
+.bharatbms-content {
+  flex: 1;
+  max-width: 550px;
+  color:white
+}
+
+.bharatbms-content h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color:white;
+}
+
+.bharatbms-content .paragraph {
+  font-size: 18px;
+  line-height: 1.7;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.know-more-button {
+  background-color: transparent;
+  color: #00e0e0;
+  border: 2px solid #00e0e0;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.know-more-button:hover {
+  background-color: #00e0e0;
+  color: #000;
+}
+
+.bharatbms-image {
+  flex: 1;
+  text-align: center;
+}
+
+.bharatbms-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.power-section {
+  position: relative;
+  height: 80vh;
+}
+
+.power-bg-video {
+  position: absolute;
+  width: 100%;
+  height: 150%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.power-content {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  max-width: 600px;
+  padding-left: 60px;
+  color: white;
+}
+
+
+/* Capacity Section */
+/* Capacity Section */
+.capacity-section {
+  display: flex;
+  padding: 120px 100px;
+  position: relative;
+  background-color: black;
+  z-index: 1;
+  margin-top: 250px;
+  color:#00bfff;
+  
+   min-height: 500px; /* Increased from 40px to 120px */
+}
+
+.capacity-left {
+  flex: 1;
+  position: relative;
+}
+.battery-img {
+  
+  width: 120%;
+  height: 350px; /* or any smaller value you prefer */
+  object-fit: contain;
+  left: 10%;
+  width: 200%; /* or 'cover' if you want it to fill */
+}
+.half-circle-img {
+  position: absolute;
+  top: 100%;
+  left: 70%;
+  width: 60%;
+}
+.capacity-right {
+  flex: 1;
+  padding-left: 0px; /* Move text more to the right */
+  
+  animation: slideInRight 1s ease-out forwards;
+  animation-delay: 0.7s;
+  opacity: 0; /* ensure it starts hidden */
+}
+/* Add this to the bottom of your globals.css */
+
+/* Keyframes */
+@keyframes slideHorizontal {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+@keyframes slideVertical {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Apply animation to images */
+.battery-img {
+  width: 200%;
+  height: 300px;
+  object-fit: contain;
+  animation: slideHorizontal 3s ease-in-out infinite;
 }
 
-* {
-  box-sizing: border-box;
+.half-circle-img {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 100%;
+  animation: slideVertical 3s ease-in-out infinite;
+}
+
+
+/* How It Works with Video Background */
+.how-works-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  color: white;
+}
+
+.how-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.how-overlay {
+  position: relative;
+  z-index: 2;
+  padding: 80px 100px;
+  background: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.how-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #00aaff;
+}
+
+.how-subtext {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin-bottom: 50px;
+}
+
+.how-modes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.mode-card {
+  flex: 1 1 250px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.mode-card:hover {
+  transform: translateY(-10px);
+}
+
+.mode-card h3 {
+  color: #00aaff;
+  margin-bottom: 10px;
+}
+
+
+
+/* How Section */
+.how-section {
+  padding: 80px 100px;
+  background: black;
+  
+}
+.how-cards {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+  
+}
+.how-cards div {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
+/* Reliable Energy Section with home.png */
+.reliable-energy-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.reliable-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.reliable-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
+  z-index: 1;
+}
+
+.reliable-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.reliable-content h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #00bfff; /* Optional: blue heading */
+}
+
+.reliable-content p {
+  font-size: 1.2rem;
+  color: #f0f0f0;
+}
+
+
+/* Learn Energy Section */
+.learn-energy-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.learn-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.learn-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.learn-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.learn-content h2 {
+  font-size: 2.8rem;
+  color: #00bfff;
+  margin-bottom: 20px;
+}
+
+.learn-content p {
+  font-size: 1.2rem;
+  color: #f0f0f0;
+  margin-bottom: 30px;
+}
+
+.learn-link {
+  padding: 12px 24px;
+  background: #00bfff;
+  color: #000;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.learn-link:hover {
+  background: #009acd;
+}
+
+
+/* Blog Section */
+.blog-section {
+  padding: 80px 100px;
+  background:black;
+  text-align: center;
+}
+
+.blog-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.blogs {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.blog-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 300px;
+  max-width: 350px;
+  text-align: left;
+}
+
+.blog-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.blog-date {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.blog-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.blog-card p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.read-more {
+  font-weight: bold;
+  color: #00bfff;
+  text-decoration: none;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+.view-all-btn {
+  margin-top: 40px;
+}
+
+.view-all-btn a {
+  font-weight: bold;
+  color: #00bfff;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+/* Footer */
+.footer {
+  background: #000;
+  color: #fff;
+  padding: 60px 100px 20px;
+  font-size: 0.95rem;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.footer-left {
+  max-width: 400px;
+}
+
+.footer-left h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.footer-left p {
+  margin-bottom: 15px;
+  color: #ccc;
+}
+
+.email-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.email-form input {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.email-form button {
+  padding: 10px 20px;
+  background-color: #00bfff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.email-form button:hover {
+  background-color: #009ddc;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.footer-logo-desc {
+  margin-bottom: 30px;
+}
+
+.footer-logo {
+  height: 40px;
+  margin-bottom: 15px;
+}
+
+.footer-description {
+  color: #ccc;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.footer-links {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.footer-links h4 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.footer-links ul {
+  list-style: none;
   padding: 0;
   margin: 0;
 }
 
-a {
-  color: inherit;
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #ccc;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.footer-links a:hover {
+  color: #00bfff;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #333;
+  margin-top: 40px;
+  padding-top: 20px;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.footer-bottom a {
+  color: #00bfff;
+  text-decoration: none;
 }
