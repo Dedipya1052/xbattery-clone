@@ -36,7 +36,7 @@ export default function Home() {
   <div className="bharatbms-content">
     <h2>BharatBMS</h2>
     <p className="paragraph">
-      India's first universal Battery Management System scales from 5kWh setups to megawatt applications, offering modular upgrades and reliable performance in tough power conditions.
+      India&apos;s first universal Battery Management System scales from 5kWh setups to megawatt applications, offering modular upgrades and reliable performance in tough power conditions.
     </p>
     <p className="paragraph">
       Made in India with local components, it ensures fast support and customization while driving innovation in energy storage and EV products.
@@ -92,7 +92,7 @@ export default function Home() {
   <div className="how-overlay">
     <h2 className="how-title">How It Works</h2>
     <p className="how-subtext">
-      You're covered at every stage of an outage. Its intelligent modes kick in before the power goes out, ensuring your home stays powered through any disruption.
+      You&apos;re covered at every stage of an outage. Its intelligent modes kick in before the power goes out, ensuring your home stays powered through any disruption.
     </p>
 
     <div className="how-modes">
